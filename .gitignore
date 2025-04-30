@@ -1,0 +1,12 @@
+.venv
+.env
+.DS_Store
+
+# Ignore audio files
+audio/
+*.m4a
+
+# Ignore transcribed text
+transcribed_text/
+
+# Ignore specific files
