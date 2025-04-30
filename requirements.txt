@@ -1,0 +1,8 @@
+# Common / Transcriber
+librosa
+numpy
+
+# Diarizer
+torch # Install appropriate version for your system (CPU/CUDA) from pytorch.org
+pyannote.audio>=2.1.1 # Or specific version compatible with WhisperX
+git+https://github.com/m-bain/whisperX.git
