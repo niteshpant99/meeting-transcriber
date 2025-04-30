@@ -6,6 +6,7 @@ import gc
 import logging
 import sys
 import time
+from dotenv import load_dotenv
 
 def setup_logging():
     """Sets up basic logging configuration."""
@@ -97,6 +98,7 @@ def save_diarized_transcription(result, input_filename, output_dir):
 
 def main(args):
     """Main execution logic for diarization."""
+    load_dotenv()
     start_time = time.time()
     logging.info("Starting diarization process...")
 

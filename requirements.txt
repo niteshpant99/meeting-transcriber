@@ -2,6 +2,7 @@
 openai-whisper
 librosa
 numpy
+python-dotenv
 
 # Diarizer
 torch # Install appropriate version for your system (CPU/CUDA) from pytorch.org
