@@ -42,7 +42,7 @@ python transcriber.py <input_file> [options]
 **Example:**
 
 ```bash
-python transcriber.py audio/apollo_call_0.m4a -o transcripts -m base
+python transcriber.py audio/call_0.m4a -o transcripts -m base
 ```
 
 ---
@@ -103,14 +103,14 @@ python diarizer.py <input_file> [options]
 
 ```bash
 # Make sure you are logged in via huggingface-cli login first!
-python diarizer.py audio/apollo_call_1.m4a -m medium -d cuda -ct float16
+python diarizer.py audio/call_1.m4a -m medium -d cuda -ct float16
 ```
 
 This command will:
-*   Load `audio/apollo_call_1.m4a`.
+*   Load `audio/call_1.m4a`.
 *   Use the `medium` Whisper model on a CUDA device with `float16` precision.
 *   Perform transcription, alignment, and diarization.
-*   Save the output to `diarized_text/apollo_call_1_diarized.txt`.
+*   Save the output to `diarized_text/call_1_diarized.txt`.
 
 **Memory Management:**
 

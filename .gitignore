@@ -8,5 +8,7 @@ audio/
 
 # Ignore transcribed text
 transcribed_text/
+diarized_text/
+*.txt
 
 # Ignore specific files
