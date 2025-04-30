@@ -98,17 +98,18 @@ python diarizer.py <input_file> [options]
 *   `-ct` or `--compute_type`: Model compute type (`float16`, `int8`, `float32`). Defaults to `float16`. `int8` requires compatible hardware.
 *   `-bs` or `--batch_size`: Transcription batch size. Defaults to `16`. Adjust based on VRAM.
 *   `--hf_token`: Your Hugging Face access token (if not logged in or using env var).
+*   `--language`: The language of audio file, default: `none` and auto detects, (e.g., `en`, `zh`, `fr`).
 
 **Example:**
 
 ```bash
 # Make sure you are logged in via huggingface-cli login first!
-python diarizer.py audio/call_1.m4a -m medium -d cuda -ct float16
+python diarizer.py audio/call_1.m4a -m medium -d cuda -ct float32
 ```
 
 This command will:
 *   Load `audio/call_1.m4a`.
-*   Use the `medium` Whisper model on a CUDA device with `float16` precision.
+*   Use the `medium` Whisper model on a CUDA device with `float32` precision.
 *   Perform transcription, alignment, and diarization.
 *   Save the output to `diarized_text/call_1_diarized.txt`.
 

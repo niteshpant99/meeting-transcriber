@@ -33,8 +33,8 @@ def parse_arguments():
                         help="Batch size for transcription. Default: 16.")
     parser.add_argument("--hf_token", default=None,
                         help="Hugging Face token for using pyannote.audio models. Reads from HF_TOKEN env var if not provided.")
-    # Add language detection later if needed
-    # parser.add_argument("--language", default=None, help="Language code (e.g., 'en', 'es'). Detects automatically if None.")
+    parser.add_argument("--language", default=None,
+                        help="Language code of the audio (e.g., 'en', 'es'). If None, WhisperX will detect it.")
     return parser.parse_args()
 
 def format_timestamp(seconds):
@@ -146,7 +146,8 @@ def main(args):
         logging.info(f"Loading Whisper model: {args.model_name} (compute_type: {args.compute_type})")
         model = whisperx.load_model(args.model_name, device, compute_type=args.compute_type)
         logging.info("Transcribing audio...")
-        result = model.transcribe(audio, batch_size=args.batch_size)
+        # Pass the language argument if provided
+        result = model.transcribe(audio, batch_size=args.batch_size, language=args.language)
         logging.info("Transcription complete.")
 
         # --- Align Transcription ---
