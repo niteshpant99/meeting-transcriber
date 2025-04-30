@@ -1,4 +1,5 @@
 # Common / Transcriber
+openai-whisper
 librosa
 numpy
 
